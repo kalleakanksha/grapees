@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grapees!</title>
+    <link rel="stylesheet" href="userhome.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const addPostButton = document.getElementById("addPostButton");
+            const postForm = document.getElementById("postForm");
+            const imageUploadButton = document.getElementById("imageUploadButton");
+            const videoUploadButton = document.getElementById("videoUploadButton");
+            const selectedFileInput = document.getElementById("selectedFile");
+            const postsSection = document.getElementById("posts");
+            const imagePreview = document.getElementById("imagePreview");
+            const videoPreview = document.getElementById("videoPreview");
+
+            addPostButton.addEventListener("click", function () {
+                postForm.style.display = "block";
+            });
+
+            imageUploadButton.addEventListener("click", function () {
+                selectedFileInput.setAttribute("accept", "image/*");
+                selectedFileInput.click();
+            });
+
+            videoUploadButton.addEventListener("click", function () {
+                selectedFileInput.setAttribute("accept", "video/*");
+                selectedFileInput.click();
+            });
+
+            selectedFileInput.addEventListener("change", function () {
+                const selectedFile = selectedFileInput.files[0];
+                if (selectedFile) {
+                    if (selectedFile.type.startsWith("image/")) {
+                        // Display the selected image in the preview
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            const img = document.createElement("img");
+                            img.src = e.target.result;
+                            img.alt = "Selected Image";
+                            imagePreview.innerHTML = "";
+                            imagePreview.appendChild(img);
+                            videoPreview.style.display = "none"; // Hide video preview
+                        };
+                        reader.readAsDataURL(selectedFile);
+                    } else if (selectedFile.type.startsWith("video/")) {
+                        // Display the selected video in the preview
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            videoPreview.src = e.target.result;
+                            videoPreview.style.display = "block";
+                            imagePreview.innerHTML = ""; // Clear the image preview
+                        };
+                        reader.readAsDataURL(selectedFile);
+                    }
+                }
+            });
+
+            const addPostForm = document.getElementById("addPostForm");
+
+            addPostForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Get input values
+                const postTitle = document.getElementById("postTitle").value;
+                const postContent = document.getElementById("postContent").value;
+
+                // Create a post element with the selected image or video
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+                postElement.innerHTML = `
+                    <h3>${postTitle}</h3>
+                    ${imagePreview.innerHTML}
+                    <p>${postContent}</p>
+                    ${videoPreview.outerHTML}
+                `;
+
+                // Add the post to the posts section
+                postsSection.appendChild(postElement);
+
+                // Clear form fields and hide the form
+                addPostForm.reset();
+                postForm.style.display = "none";
+                imagePreview.innerHTML = ""; // Clear the image preview
+                videoPreview.style.display = "none"; // Hide video preview
+                videoPreview.src = ""; // Clear video source
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Handle the profile dropdown
+            const profileDropdown = document.getElementById("profileDropdown");
+            const profileOptions = document.getElementById("profileOptions");
+
+            profileDropdown.addEventListener("click", function () {
+                profileOptions.classList.toggle("./landingpage.html");
+            });
+
+            // Handle the search button
+            const searchButton = document.getElementById("searchButton");
+            searchButton.addEventListener("click", function () {
+                const searchInput = document.getElementById("searchInput").value;
+                if (searchInput.toLowerCase() === "st peters") {
+                    // Show the St. Peters modal
+                    const stPetersModal = document.getElementById("stPetersModal");
+                    stPetersModal.classList.add("show");
+                }
+            });
+
+            // Close the St. Peters modal when clicking outside of it
+            const stPetersModal = document.getElementById("stPetersModal");
+            stPetersModal.addEventListener("click", function (e) {
+                if (e.target === stPetersModal) {
+                    stPetersModal.classList.remove("show");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/Grapees! (1).png" alt="Logo">
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search" id="searchInput">
+            <button id="searchButton">Search</button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./userhome.html">Home</a></li>
+                <li><a href="#" id="addPostButton">Post</a></li>
+                <li><a href="http://localhost:3000">message</a></li>
+                <li id="profileDropdown">
+                    <a href="#"><img src="./img/background.avif" alt="" class="imgok"> ;</a>
+                    <ul id="profileOptions" class="hidden">
+                        <li><a href="./smainprofile.html">Main Profile</a></li>
+                        <li><a href="./sinsprofile.html">Institution Profile</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="posts">
+            <!-- Fake Post 1 -->
+            <div class="post">
+                <img src="./img/black.jpg" alt="" class="imageprofile">
+                <h3>Bharatanatyam 1st Prize</h3>
+                <img src="./img/dance.avif" alt="Fake Image 1">
+                <p>This is a fake post content for post 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+    
+            <!-- Fake Post 2 -->
+            <div class="post">
+                <img src="./img/black.jpg" alt="" class="imageprofile">
+                <h3>SPECATHON-23</h3>
+                <img src="./img/specathon.jpg" alt="Fake Image 2">
+                <p>The Gradient Club, welcomes you to participate in the most awaited event "SPECATHON-23” a 36-hour National level hackathon, which is going to be conducted by St.Peter's Engineering College. 
+                    Location: St.Peters Engineering College, Maisammaguda, Kompally, Hyderabad - 500100.
+                    Date: 26th and 27th September'2023.                         Scan the QR code in the poster or follow the link given below for :
+                    Registrations,Problem Statements and Abstract Submission...</p>
+            </div>
+    
+            <!-- Fake Post 3 -->
+            <div class="post">
+                <img src="./img/black.jpg" alt="" class="imageprofile">
+                <h3>Spec Result</h3>
+                <img src="./img/student-achievement.jpg" alt="Fake Image 3">
+                <p>Congratulations to students who secured good marks</p>
+            </div>
+    
+            <!-- Fake Post 4 -->
+            <div class="post">
+                <img src="./img/black.jpg" alt="" class="imageprofile">
+                <h3>Bharatanatyam 1st Prize</h3>
+                <img src="./img/Bharat.jpeg" alt="Fake Image 4">
+                <p>WON
+                    Bharatanatyam 1st Prize|Mohiniyattam 1st Prize|Kuchipudi 1st Prize| Oddissa 1st Prize
+                    Senior Category
+                    AIDA International dance festival held in Udaipur KALATHILAKAM 2022 for outstanding performance in classical dance styles</p>
+            </div>
+        </section>
+    </main>
+    
+    <div id="postForm" class="hidden">
+        <h2>Create a Post</h2>
+        <form id="addPostForm">
+            <label for="postTitle">Title:</label>
+            <input type="text" id="postTitle" required><br>
+            <label for="postContent">Content:</label>
+            <textarea id="postContent" required></textarea><br>
+            <button id="imageUploadButton">Upload Image</button>
+            <button id="videoUploadButton">Upload Video</button><br>
+            <label for="selectedFile">Selected File:</label>
+            <input type="file" id="selectedFile" style="display: none;"><br>
+            <div id="imagePreview"></div>
+            <video id="videoPreview" controls style="display: none;"></video>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+
+    <!-- Popup Modal for St. Peters -->
+    <div id="stPetersModal" class="modal hidden">
+        <div class="modal-content">
+            <img src="st_peters_logo.png" alt="St. Peters Logo">
+            <h2>St. Peters College</h2>
+            <label for="userType">Select your role:</label>
+            <select id="userType">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+            </select>
+            <button id="makeRequestButton"> <a href="">Make Request</a> </button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* Nav-bar Starting */
+/* Style the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white; /* Change this to your desired background color */
+    padding: -100px 500px;
+    color: white; /* Text color for the navigation items */
+    background-image: linear-gradient(white, rgb(198, 255, 112));
+}
+
+/* Style the logo */
+.logo img {
+    height: 150px;
+    margin-top: 5px;/* Adjust the logo height as needed */
+}
+/* Style the buttons */
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Style the "Join Now" button */
+.join-button,
+.login-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(211, 255, 146); /* Change this to your desired button color */
+    color: black; /* Text color for the buttons */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: 1px solid;
+    margin-right: 10px; /* Add spacing between buttons */
+}
+.join-button{
+    margin-left: 980px;
+    padding: 10px 15px;
+}
+
+.login-button{
+    padding: 10px 18px;
+}
+
+.join-button:hover,
+.login-button:hover {
+    background-color: greenyellow; /* Change this to the hover color */
+}
+
+/* Add styles for the rest of your landing page content below */
+
+/*Nav-bar Ending*/
+
+/* Style the quote section */
+.quote-section {
+    position: relative;
+    text-align: center;
+    color: rgb(0, 0, 0); /* Text color for the quote */
+    padding: 5px 10px;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
+    background-color: white;
+    background-image: linear-gradient(rgb(195, 255, 104), white);
+}
+
+.quote-section p {
+    font-size: 10px;
+    z-index: 1; /* Place the text above the background */
+}
+
+.logo1{
+    height: 200px;
+    margin-top: 5px;
+}
+
+
+
+/* Style the quote section (same as previous) */
+
+/* Style the login cards section */
+.login-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background-color: #f2f2f2; /* Background color for the login cards section */
+}
+
+
+/* Style the quote section (same as before) */
+
+/* Style the GRAPEES section */
+.grapees-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f2f2f2; /* Background color for the GRAPEES section */
+    background-image: linear-gradient( white, rgb(195, 255, 104))
+}
+.grapees-sections {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f2f2f2; /* Background color for the GRAPEES section */
+    background-image: linear-gradient(rgb(195, 255, 104),white)
+}
+
+/* Style the description */
+.grapees-section{
+    background-color: white;
+}
+.description {
+    flex: 1;
+    padding: 20px;
+}
+
+.description h2 {
+    font-size: 24px;
+}
+
+/* Style the image */
+.image {
+    flex: 1;
+    text-align: center;
+}
+
+.image img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: auto; /* Maintain the image's aspect ratio */
+    border-radius: 10%;
+}
+/* .iimage {
+    flex: 1;
+    text-align: center;
+}
+
+.iimage img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+    height: 500px; /* Maintain the image's aspect ratio */
+    border-radius: 10%;
+} */
+
+
+/* Style the footer section */
+.footer {
+    background-color: white; /* Background color for the footer */
+    color: black; /* Text color for the footer */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; /* Center all footer items horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Style the footer logo */
+.footer-logo img {
+    height: 100px; /* Adjust the logo height as needed */
+    margin-right: 10px; /* Add spacing between logo and other elements */
+}
+
+/* Style the copyright symbol and policy links */
+.footer-copyright::before {
+    content: "\00a9"; /* Unicode for the copyright symbol */
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black; /* Text color for the links */
+    margin-right: 20px;
+}
+
+.footer-links a:last-child {
+    margin-right: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:rgb(195, 255, 104);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 920px;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: black; /* Text color for the links */
+}
+
+/* Style the dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: greenyellow; /* Change this to the hover color */
+}
+
+/* Show the dropdown content when the dropdown button is clicked */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-contentl {
+    display: none;
+    position: absolute;
+    background-color: rgb(195, 255, 104);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: -50px;
+}
+
+/* Style the dropdown links */
+.dropdown-contentl a {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    color: black; /* Text color for the links */
+}
+
+/* Style the dropdown links on hover */
+.dropdown-contentl a:hover {
+    background-color: greenyellow; /* Change this to the hover color */
+}
+
+/* Show the dropdown content when the dropdown button is clicked */
+.dropdownl:hover .dropdown-contentl {
+    display: block;
+}

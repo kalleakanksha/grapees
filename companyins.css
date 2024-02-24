@@ -1,0 +1,92 @@
+/* Add this CSS to your insmanage.css or a separate CSS file */
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgb(195, 255, 104), white)
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* This creates the circular shape */
+    overflow: hidden;
+  }
+  
+  .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire circle */
+  }
+  
+  /* Add these styles for additional spacing and alignment */
+  .student-info {
+    margin-left: 20px;
+  }
+  
+  .student-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .college {
+    font-size: 18px;
+  }
+  
+  .about {
+    margin-top: 10px;
+  }
+  
+  /* Rest of your CSS styles for other elements in your HTML */
+
+  /* Add this CSS to your companyins.css or a separate CSS file */
+
+/* ... Your existing styles ... */
+
+.main-section {
+    display: flex;
+    justify-content: space-around; /* Adjust this as needed for your desired spacing */
+    margin-top: 20px; /* Add spacing between the profile and cards section */
+}
+
+.card {
+    flex: 1; /* Distribute the space evenly among the cards */
+    border: 1px solid #ccc; /* Add a border for better separation */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for a card effect */
+    margin: 0 10px; /* Add spacing between cards */
+}
+
+/* ... Your existing styles ... */
+/* Add this CSS to your companyins.css or a separate CSS file */
+
+/* ... Your existing styles ... */
+
+.main-section {
+    display: flex;
+    justify-content: space-around; /* Adjust this as needed for your desired spacing */
+    margin-top: 20px; /* Add spacing between the profile and cards section */
+}
+
+.card {
+    flex: 1; /* Distribute the space evenly among the cards */
+    border: 1px solid #ccc; /* Add a border for better separation */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow for a card effect */
+    margin: 0 10px; /* Add spacing between cards */
+}
+
+.card img {
+    max-height: 150px; /* Adjust the height as needed */
+    width: auto; /* Maintain the image's aspect ratio */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* This creates the circular shape */
+    overflow: hidden;
+}
+
+/* ... Your existing styles ... */
+
+  

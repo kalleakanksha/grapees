@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="institutionregister.css">
+    <!-- Add your CSS file (registrationpage.css) path here -->
+    <title>Institute Registration - GRAPEES</title>
+</head>
+<body>
+    <form action="registration-form.php" class="registration-container" method="post">
+        <div class="logo">
+            <img src="./img/Grapees! (1).png" alt="GRAPEES Logo">
+        </div>
+        <div class="registration-form">
+            <h2>Institute Registration</h2>
+            <div class="input-container">
+                <input type="text" id="institute-name" name="institute-name" placeholder="Enter Institute Name" required>
+            </div>
+            <div class="input-container">
+                <input type="text" id="govt-institute-id" name="govt-institute-id" placeholder="Enter Government Institute ID" required>
+            </div>
+            <div class="input-container">
+                <input type="email" id="institute-email" name="institute-email" placeholder="Enter Institute Email" required>
+            </div>
+            <div class="input-container">
+                <input type="tel" id="institute-phone" name="institute-phone" placeholder="Enter Institute Phone Number" required>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Create a Password" required>
+            </div>
+            <button type="submit"> <a href="./insmakerequest.html">Register</a> </button>
+        </form>
+    </div>
+</body>
+</html>

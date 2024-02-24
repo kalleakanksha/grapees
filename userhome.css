@@ -1,0 +1,317 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: white;
+    color: black;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient( white, rgb(195, 255, 104))
+}
+
+/* Style the logo */
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Style the search box container */
+.search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style the search input field */
+.search-box input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+    background-color: rgba(173, 255, 49, 0.336);
+}
+
+/* Style the search button */
+.search-box button {
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(173, 255, 49, 0.336);
+}
+
+/* Hover effect for the search button */
+.search-box button:hover {
+    background-color: greenyellow;
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* Style the featured and recent post sections */
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(rgb(195, 255, 104), white)
+}
+
+section {
+    margin-bottom: 20px;
+    background-image: linear-gradient(rgb(195, 255, 104), white)
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* Style the popup form */
+#postForm {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Style the buttons inside the popup form */
+#postForm button {
+    margin-right: 10px;
+}
+
+/* Style the file input */
+#selectedFile {
+    display: none;
+}
+
+/* Hide the post creation form initially */
+.hidden {
+    display: none;
+}
+
+/* Style for the post container */
+.post {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px 0;
+    max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+/* Style for the image inside the post */
+.post img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for the video inside the post */
+.post video {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Your existing CSS styles */
+
+/* Style for the dropdown menu */
+#profileDropdown {
+    position: relative;
+}
+
+#profileOptions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+#profileDropdown:hover #profileOptions {
+    display: block;
+}
+
+#profileOptions li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#profileOptions li:last-child {
+    border-bottom: none;
+}
+
+#profileOptions a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 5px 0;
+}
+
+#profileOptions a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Rest of your existing CSS styles */
+
+
+/* Style for the popup modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.modal h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal label {
+    font-weight: bold;
+}
+
+.modal select {
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.modal button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Display the modal when it's shown */
+.modal.show {
+    display: block;
+}
+
+.imgok{
+    width: 50px; /* Set the width of your profile image */
+            height: 50px; /* Set the height of your profile image */
+            border-radius: 50%; /* Create a circular shape using border-radius */
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }
+
+/* Style for the main section containing posts */
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(rgb(195, 255, 104), white)
+}
+
+/* Style for individual posts */
+.post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for post titles */
+.post h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for post images */
+.post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Style for post content */
+.post p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Add some spacing between posts */
+.post + .post {
+    border-top: 1px solid #ccc;
+}
+
+.imageprofile{
+    width: 50px; /* Set the width of your profile image */
+            height: 50px; /* Set the height of your profile image */
+            border-radius: 50px; /* Create a circular shape using border-radius */
+            object-fit: cover; /* Ensure the image covers the entire container */
+        }

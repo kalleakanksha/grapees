@@ -1,0 +1,23 @@
+/* Styling for the year and branch select options */
+.select-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Styling for the main section */
+.main-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Styling for individual cards (attendance, grades, utilities) */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    flex-basis: calc(33.33% - 20px);
+    text-align: center;
+}

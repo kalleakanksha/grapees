@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./insmanageA.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="./userhome.css">
+    <title>Student Details</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/Grapees! (1).png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./userhome.html">Home</a></li>
+                <li id="profileDropdown">
+                    <a href="#">Profile &#9662;</a>
+                    <ul id="profileOptions" class="hidden">
+                        <li><a href="#">Main Profile</a></li>
+                        <li><a href="#">Institution Profile</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-section">
+        <table>
+            <!-- Table header with subject names -->
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>OS</th>
+                    <th>DAA</th>
+                    <th>DBMS</th>
+                    <th>PPL</th>
+                    <th>PP</th>
+                    <th>Total</th>
+                    <th>Average Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="student-row" data-name="Name 1">
+                    <td class="student-name">Name 1</td>
+                    <td class="subject-os">85</td>
+                    <td class="subject-daa">78</td>
+                    <td class="subject-dbms">90</td>
+                    <td class="subject-ppl">88</td>
+                    <td class="subject-pp">92</td>
+                    <td class="student-total">-</td>
+                    <td class="student-marks">89</td>
+                </tr>
+                <tr class="student-row" data-name="Name 2">
+                    <td class="student-name">Name 2</td>
+                    <td class="subject-os">92</td>
+                    <td class="subject-daa">86</td>
+                    <td class="subject-dbms">94</td>
+                    <td class="subject-ppl">85</td>
+                    <td class="subject-pp">90</td>
+                    <td class="student-total">-</td>
+                    <td class="student-marks">92</td>
+                </tr>
+                <!-- Add more student rows as needed -->
+                <tr class="student-row" data-name="Name 10">
+                    <td class="student-name">Name 10</td>
+                    <td class="subject-os">88</td>
+                    <td class="subject-daa">90</td>
+                    <td class="subject-dbms">82</td>
+                    <td class="subject-ppl">78</td>
+                    <td class="subject-pp">85</td>
+                    <td class="student-total">-</td>
+                    <td class="student-marks">95</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="student-popup" class="popup">
+        <div class="popup-content">
+            <h2 id="student-popup-name">Name 1</h2>
+            <div id="student-popup-marks">
+                <!-- Marks input fields for each subject go here -->
+            </div>
+            <button id="submit-popup">Submit</button>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for updating marks in the main table
+        const studentRows = document.querySelectorAll('.student-row');
+        const studentPopup = document.getElementById('student-popup');
+        const studentPopupName = document.getElementById('student-popup-name');
+        const studentPopupMarks = document.getElementById('student-popup-marks');
+        const submitPopupButton = document.getElementById('submit-popup');
+        const closePopupButton = document.getElementById('close-popup');
+
+        studentRows.forEach((row) => {
+            row.addEventListener('click', () => {
+                const studentName = row.getAttribute('data-name');
+                const studentMarks = row.querySelector('.student-marks');
+                studentPopupName.textContent = studentName;
+                studentPopupMarks.innerHTML = ''; // Clear previous marks input fields
+                studentPopupMarks.appendChild(createMarksInputs(studentName));
+                studentPopup.style.display = 'block';
+
+                // Handle updating marks in the main table when the popup is closed
+                closePopupButton.addEventListener('click', () => {
+                    const marksInputs = studentPopupMarks.querySelectorAll('input[type="text"]');
+                    const totalMarksCell = row.querySelector('.student-marks');
+                    let totalMarks = 0;
+
+                    marksInputs.forEach((input) => {
+                        const subject = input.name.split('-')[1];
+                        const subjectCell = row.querySelector(`.subject-${subject}`);
+                        subjectCell.textContent = input.value;
+                        totalMarks += parseInt(input.value) || 0;
+                    });
+
+                    // Calculate and update the average marks
+                    const averageMarks = (totalMarks / marksInputs.length).toFixed(2);
+                    totalMarksCell.textContent = averageMarks;
+
+                    studentPopup.style.display = 'none';
+                });
+
+                // Handle submitting marks changes
+                submitPopupButton.addEventListener('click', () => {
+                    // Add your code to submit marks changes to your backend or storage here
+                    studentPopup.style.display = 'none';
+                });
+            });
+        });
+
+        // JavaScript code for creating the popup marks input fields
+        function createMarksInputs(studentName) {
+            const subjects = ["OS", "DAA", "DBMS", "PPL", "PP"];
+            const marksInputs = document.createElement('div');
+            marksInputs.className = 'student-popup-marks';
+
+            subjects.forEach((subject) => {
+                const subjectInput = document.createElement('input');
+                subjectInput.type = 'text';
+                subjectInput.name = `${studentName}-${subject}-marks`;
+                subjectInput.placeholder = `${subject} Marks`;
+                marksInputs.appendChild(subjectInput);
+            });
+
+            return marksInputs;
+        }
+    </script>
+</body>
+</html>

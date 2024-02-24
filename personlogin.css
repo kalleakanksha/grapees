@@ -1,0 +1,74 @@
+/* loginpage.css */
+
+/* Style the login container to center everything */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This centers content vertically */
+    background-color: #f2f2f2; /* Background color for the page */
+}
+
+/* Style the logo */
+.logo img {
+    max-width:200px; /* Adjust the logo size as needed */
+}
+
+/* Style the login form */
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    display: block;
+    font-weight: bold;
+    align-items: start;
+}
+
+.input-container input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: 1px solid;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: greenyellow;
+}
+
+.signup-link {
+    margin-top: 10px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: greenyellow;
+    font-weight: bold;
+}
+
+
